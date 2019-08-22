@@ -191,7 +191,7 @@
 </template>
 
 <script>
-import Aux from "../../../services/aux";
+import Aux from "../../../services/auxTTG";
 import Anime from "../../../services/animes"
 export default {
   name: "new-anime",
