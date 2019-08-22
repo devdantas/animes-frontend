@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@import '../../../node_modules/bootstrap/dist/css/bootstrap.css';
+@import '../../../node_modules/@fortawesome/fontawesome-free/css/all.css';
+@import 'variables';
+
+* {
+    font-family: 'Poopins', sans-serif;
+}
+
+.btn-primary {
+    border-color: var(--featured) !important;
+    background-color: var(--featured) !important;
+    color: var(--ligth) !important;
+
+    &:hover {
+        background-color: var(--featured-second) !important;  
+    }
+}
