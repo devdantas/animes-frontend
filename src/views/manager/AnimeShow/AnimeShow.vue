@@ -211,7 +211,7 @@ export default {
       showModal: false,
       specific: [],
       slug: this.$attrs.slug,
-      // token: localStorage.getItem('userToken'),
+      token: false,
       form: {
         episodeos: [
           {
@@ -226,7 +226,7 @@ export default {
     };
   },
   created() {
-    this.show();
+    this.show()
   },
   methods: {
     closeModal() {

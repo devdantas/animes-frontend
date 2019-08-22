@@ -1,4 +1,5 @@
 <template>
+
   <div id="modal-att" slot="type">
     <label @click="showModal = true" class="title-type">Assistir Online</label>
       <div
@@ -21,28 +22,15 @@
 
             <div class="modal-body">
               <div class="row">
-                <div class="form-group col-sm-12">
-                  Qualidades:
-                  <button @click="showVideo720p()" type="button" class="btn btn-sm btn-info ml-2">720p</button>
-                  <button @click="showVideo1080p()" type="button" class="btn btn-sm btn-info ml-2">1080p</button>
-                </div>
-              </div>
-              <div class="row">
                 <div id="video-720p" class="col-sm-12">
-                  <video 
-                  class="embed-responsive embed-responsive-16by9"
-                  poster="https://i.ibb.co/tYz106C/banner-player-720p.png" 
-                  controls :src="this.link720p"
-                  style="opacity: 1; width:100%;">
-                  </video>
-                </div>
-                <div id="video-1080p" class="col-sm-12" style="display: none;">
-                  <video 
-                  class="embed-responsive embed-responsive-16by9"
-                  poster="https://i.ibb.co/NLD2Vjq/banner-player-1080p.png" 
-                  controls :src="this.link1080p"
-                  style="opacity: 1;">
-                  </video>
+                  <vue-plyr>
+                    <video
+                      poster="https://i.ibb.co/tYz106C/banner-player-720p.png"
+                    >
+                      <source :src="this.link720p" type="video/mp4" size="720">
+                      <source :src="this.link1080p" type="video/mp4" size="1080">
+                    </video>
+                  </vue-plyr>
                 </div>
               </div>
             </div>
@@ -78,20 +66,12 @@ export default {
   data() {
     return {
       loading: false,
-      showModal: false
+      showModal: false,
     };
   },
   methods: {
     closeModal() {
       this.showModal = false;
-    },
-    showVideo720p(){
-      document.getElementById("video-1080p").style.display = "none";
-      document.getElementById("video-720p").style.display = "block";
-    },
-    showVideo1080p(){
-      document.getElementById("video-1080p").style.display = "block";
-      document.getElementById("video-720p").style.display = "none";
     }
   }
 };
