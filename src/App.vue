@@ -30,7 +30,7 @@ export default {
     }
   },
   mounted () {
-    if(localStorage.userToken == null){
+    if(sessionStorage.userToken == null){
       setTimeout(() =>{
         this.$root.$emit('Spinner::hide')
       },300);
