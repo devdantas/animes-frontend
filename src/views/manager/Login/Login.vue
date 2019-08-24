@@ -57,7 +57,6 @@
 
 <script>
 import Auth from "../../../services/auth"
-
 export default {
   name: "login",
   data () {

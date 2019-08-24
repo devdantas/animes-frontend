@@ -23,6 +23,16 @@
             <div class="modal-body">
               <div class="row">
                 <div class="form-group col-sm-12">
+                  <label class="col-form-label">Link 480p:</label>
+                  <input 
+                    type="url" 
+                    class="form-control" 
+                    v-model="form.episodeos[0].links.link480p"
+                    required />
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-sm-12">
                   <label class="col-form-label">Link 720p:</label>
                   <input 
                     type="url" 
@@ -77,6 +87,10 @@ export default {
       type: String,
       required: true
     },
+    link480p: {
+      type: String,
+      required: true
+    },
     link720p: {
       type: String,
       required: true
@@ -95,6 +109,7 @@ export default {
           {
             title: this.titleA,
             links: {
+              link480p: this.link480p,
               link720p: this.link720p,
               link1080p: this.link1080p
             }

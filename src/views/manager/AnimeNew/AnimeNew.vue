@@ -137,6 +137,7 @@
         <div class="dados">
           <div class="row justify-content-end mr-3">
               <button
+                type="button"
                 @click="addEpisodeo"
                 class="btn btn-sm btn-info"
               >Adicionar Episódio</button>
@@ -148,6 +149,14 @@
                 <input
                   v-model="form.episodeos[index].title" 
                   type="text" 
+                  class="form-control" 
+                  required />
+              </div>
+              <div class="col-lg-12">
+                <label class="col-form-label">Link 480p:</label>
+                <input
+                  v-model="form.episodeos[index].links.link480p" 
+                  type="url" 
                   class="form-control" 
                   required />
               </div>
@@ -167,8 +176,10 @@
                   class="form-control" 
                   required />
               </div>
+              
               <div class="col-lg-12 mt-2">
                 <button
+                type="button"
                 @click="deleteEpisodeo(index)"
                 class="btn btn-sm btn-info"
                 >Remover</button>
@@ -177,7 +188,7 @@
           </div>
         </div>
         <div class="row justify-content-end mt-3 mr-2">
-          <button type="submit" class="btn btn-success">
+          <button class="btn btn-success">
             <template v-if="loading">
               <i class="fa fa-spin fa-spinner"></i>
                 Incluindo...
@@ -240,7 +251,7 @@ export default {
         this.clearInputs()
         this.loading = false
       }).catch(err => {
-        console.log(res)
+        console.log(err)
         this.clearInputs()
         this.loading = false
       })
@@ -276,6 +287,7 @@ export default {
       this.form.episodeos.push({
         title: '',
         links: {
+          link480p: '',
           link720p: '',
           link1080p: ''
         }

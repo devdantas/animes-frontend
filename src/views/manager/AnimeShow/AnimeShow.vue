@@ -101,6 +101,7 @@
                       <layout-modal
                         v-bind:episodeoId="item._id"
                         v-bind:titleA="item.title"
+                        v-bind:link480p="itemL.link480p"
                         v-bind:link720p="itemL.link720p"
                         v-bind:link1080p="itemL.link1080p"
                         class="layout-modal"
@@ -109,6 +110,7 @@
                     <div class="user-view" v-else>
                       <layout-player
                         v-bind:titleA="item.title"
+                        v-bind:link480p="itemL.link480p"
                         v-bind:link720p="itemL.link720p"
                         v-bind:link1080p="itemL.link1080p"
                       />
@@ -153,7 +155,16 @@
                 </div>
               </div>
               <div class="row">
-                <div class="form-group col-sm-6">
+                <div class="form-group col-sm-12">
+                  <label class="col-form-label">Link 480p:</label>
+                  <input
+                    type="url"
+                    class="form-control"
+                    v-model="form.episodeos[0].links.link480p"
+                    required
+                  />
+                </div>
+                <div class="form-group col-sm-12">
                   <label class="col-form-label">Link 720p:</label>
                   <input
                     type="url"
@@ -162,7 +173,7 @@
                     required
                   />
                 </div>
-                <div class="form-group col-sm-6">
+                <div class="form-group col-sm-12">
                   <label class="col-form-label">Link 1080p:</label>
                   <input
                     type="url"
@@ -196,11 +207,11 @@
 </template>
 
 <script>
-import Animes from "../../../services/animes";
-import LayoutModal from "../../../components/layout/LayoutModalPutEp";
+import Animes from "../../../services/animes"
+import LayoutModal from "../../../components/layout/LayoutModalPutEp"
 import LayoutPlayer from "../../../components/layout/LayoutPlayerVideo"
 export default {
-  name: "showanime",
+  name: 'showanime',
   components: {
     LayoutModal,
     LayoutPlayer
@@ -215,39 +226,44 @@ export default {
       form: {
         episodeos: [
           {
-            title: "",
+            title: 'Episódio ',
             links: {
-              link720p: "",
-              link1080p: ""
+              link480p: '',
+              link720p: '',
+              link1080p: ''
             }
           }
         ]
       }
-    };
+    }
   },
   created() {
     this.show()
   },
   methods: {
     closeModal() {
-      this.showModal = false;
+      this.showModal = false
     },
     async show() {
-      this.$root.$emit("Spinner::show");
+      this.$root.$emit("Spinner::show")
       await Animes.show(this.slug).then(res => {
-        this.specific = res.data.anime[0];
-      });
-      this.$root.$emit("Spinner::hide");
+        this.specific = res.data.anime[0]
+      })
+      this.$root.$emit("Spinner::hide")
+    },
+    clearInputs () {
+      this.form.episodeos[0].title = "Episódio "
+      this.form.episodeos[0].links.link480p = ""
+      this.form.episodeos[0].links.link720p = ""
+      this.form.episodeos[0].links.link1080p = ""
     },
     adicionar() {
-      this.loading = true;
+      this.loading = true
       Animes.add(this.form, this.specific._id).then(res => {
-        this.showModal = false;
-        this.form.episodeos[0].title = "";
-        this.form.episodeos[0].links.link720p = "";
-        this.form.episodeos[0].links.link1080p = "";
-        this.show();
-        this.loading = false;
+        this.showModal = false
+        this.clearInputs()
+        this.show()
+        this.loading = false
       }).catch(err => {
         this.$root.$emit('Notification::show', {
           type: 'danger',
@@ -257,7 +273,7 @@ export default {
       })
     }
   }
-};
+}
 </script>
 
 
