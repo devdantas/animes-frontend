@@ -2,7 +2,7 @@
   <div id="notfound">
     <div class="container">
       <div class="row justify-content-center">
-        <img src="https://i.ibb.co/zJnq1TP/notfound-2.png" width="30%" height="500px">
+        <img class="img-fluid" src="https://i.ibb.co/zJnq1TP/notfound-2.png" width="30%" height="500px">
       </div>
       <div class="row justify-content-center mt-2">
         <h1>Página não encontrada</h1>
@@ -21,5 +21,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+#notfound {
+  margin: 0;
+  padding: 0;
+}
 </style>

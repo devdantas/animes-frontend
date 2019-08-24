@@ -248,6 +248,10 @@ export default {
       this.$root.$emit("Spinner::show")
       await Animes.show(this.slug).then(res => {
         this.specific = res.data.anime[0]
+      }).catch(err => {
+        if(err.response.data.error === "Anime not register"){
+          this.$router.push({name: 'erro'})
+        }
       })
       this.$root.$emit("Spinner::hide")
     },
