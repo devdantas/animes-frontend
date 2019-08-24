@@ -13,7 +13,7 @@
                   height="72"
                 />                
               </center>
-              <h1 class="h3 mb-3 font-weight-normal" align="center">Animes Online</h1>
+              <h1 class="h3 mb-3 font-weight-normal" align="center">Animes Free</h1>
               <div class="form-group">
                 <input
                   id="email"

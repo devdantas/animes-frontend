@@ -73,7 +73,7 @@
 
             <!-- btn add -->
             <div class="row mt-2 float-right">
-              <div class="col-lg-12">
+              <div class="col-lg-12" id="off">
                 <button
                   @click="showModal = true"
                   class="btn btn-sm btn-outline-primary"
@@ -278,6 +278,9 @@ export default {
 
 
 <style lang="scss" scoped>
+#off {
+  display: none;
+}
 .btn-primary {
   color: var(--light) !important;
 }

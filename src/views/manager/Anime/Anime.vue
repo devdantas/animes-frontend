@@ -39,7 +39,7 @@ export default {
   name: "animes",
   data () {
     return {
-      token: localStorage.getItem('userToken'),
+      token: false,
       catalago: []
     }
   },
