@@ -282,9 +282,6 @@ export default {
 
 
 <style lang="scss" scoped>
-#off {
-  display: none;
-}
 .btn-primary {
   color: var(--light) !important;
 }

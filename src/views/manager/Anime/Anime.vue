@@ -39,7 +39,7 @@ export default {
   name: "animes",
   data () {
     return {
-      token: false,
+      token: true,
       catalago: []
     }
   },
