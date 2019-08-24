@@ -4,7 +4,7 @@ export default [
     name: 'showanime',
     props: true,
     beforeEnter: function (to, from, next) {
-      const token = localStorage.getItem('userToken')
+      const token = sessionStorage.getItem('userToken')
       if (!token) {
         next('/login')
       } else {

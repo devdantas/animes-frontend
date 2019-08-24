@@ -24,7 +24,9 @@ export default {
   },
   computed: {
     showNavBar(){
-      return this.$route.name !== 'login'
+      if(this.$route.name !== 'login' && this.$route.name !== 'erro') {
+        return this.$route.name
+      }
     }
   },
   mounted () {

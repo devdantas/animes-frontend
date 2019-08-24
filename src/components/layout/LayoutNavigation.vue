@@ -37,7 +37,7 @@ export default {
   },
   methods: {
     logout () {
-      localStorage.removeItem('userToken')
+      sessionStorage.removeItem('userToken')
       this.$router.push({ name: 'login'})
     },
     showMenu () {

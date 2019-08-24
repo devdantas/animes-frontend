@@ -74,10 +74,11 @@ export default {
 
       Auth.login(this.user).then(res => {
         let token = res.data.token
-        localStorage.userToken = token
+        sessionStorage.setItem("userToken", token)
         this.$router.push({ name: 'home'})
       }).catch(err => {
         alert("Usuário ou senha inválidos")
+        this.loading = false
       })
     }
   }

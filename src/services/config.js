@@ -8,4 +8,4 @@ export const setAuthHeader = (token) => {
   http.defaults.headers.common['Authorization'] = `Bearer ${token}`
 }
 
-setAuthHeader(localStorage.getItem('userToken'))
+setAuthHeader(sessionStorage.getItem('userToken'))
