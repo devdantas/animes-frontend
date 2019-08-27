@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f6f7f9; box-shadow: 0px 0px 5px 1px #d34178;">
     <a class="navbar-brand" href="#/manager-home">
       <img src="https://image.flaticon.com/icons/png/128/753/753352.png" width="30" height="30" class="d-inline-block align-top" alt="">
-      Animes Online
+      Animes Free
     </a>
     <button id="toggle" class="navbar-toggler" type="button" @click="showMenu">
       <span class="navbar-toggler-icon"></span>
