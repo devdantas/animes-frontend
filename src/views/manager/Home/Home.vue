@@ -104,8 +104,8 @@ export default {
     }
 
     .text {
-      font-size: 14px;
-      max-width: 400px;
+      font-size: 16px;
+      max-width: 450px;
     }
 
     .title {
@@ -124,6 +124,7 @@ export default {
       width: 55vw;
       height: 100vh;
       padding: 15px 15px 100px 150px;
+
       img {
         width: 30vw;
         margin-bottom: 50px;
@@ -135,10 +136,6 @@ export default {
           display: none;
         }
       }
-    }
-
-    .subtitle {
-      font-size: 21px;
     }
   }
   .parallax-bg {
