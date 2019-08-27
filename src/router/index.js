@@ -13,12 +13,5 @@ router.beforeEach((to, from, next) => {
     next()
   }
 })
-router.beforeRouteUpdate((to, from, next) => {
-  if (!to.matched.length) {
-    next('/erro-404')
-  } else {
-    next()
-  }
-})
 
 export default router

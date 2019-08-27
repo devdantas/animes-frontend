@@ -3,7 +3,7 @@ export default [
     path: '/manager-animes',
     name: 'anime',
     meta: {
-      title: 'Animes'
+      title: 'Séries'
     },
     beforeEnter: function (to, from, next) {
       const token = sessionStorage.getItem('userToken')
