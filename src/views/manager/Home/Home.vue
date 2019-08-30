@@ -1,16 +1,19 @@
 <template>
   <div class="home">
-    <layout-swiper/>
+      <div id="swiper-prime">
+        <swiper-prime/>
+      </div>
+      <div class="container-fluid">
+      </div>
   </div>
 </template>
 
 <script>
-import LayoutSwiper from '../../../components/layout/LayoutSwiper'
-
+import SwiperPrime from '../../../components/layout/LayoutSwiper'
 export default {
   name: "home",
   components: {
-    LayoutSwiper
+    SwiperPrime
   }
 }
 </script>

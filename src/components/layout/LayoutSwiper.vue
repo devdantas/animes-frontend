@@ -181,11 +181,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-html,
-body {
-  height: 100%;
-}
-
 body {
   background: #eee;
   font-size: 14px;
@@ -232,5 +227,12 @@ body {
   width: 100%;
   max-width: 420px;
   height: auto;
+
+  @media (max-width: 576px) { 
+    display: none;
+  }
+  @media (max-width: 768px) { 
+    display: none;
+  }
 }
 </style>
