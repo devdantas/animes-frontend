@@ -8,6 +8,15 @@
     font-family: 'Poopins', sans-serif;
 }
 
+body {
+    background-color: #2f3136 !important;
+    color: var(--light) !important;
+}
+.card {
+  background-color: #40444b !important;
+  color: var(--light);
+}
+
 .btn-primary {
     border-color: var(--featured) !important;
     background-color: var(--featured) !important;

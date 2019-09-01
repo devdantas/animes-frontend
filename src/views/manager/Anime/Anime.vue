@@ -101,6 +101,6 @@ export default {
     position: absolute;
     top: 0;
     right: 5px;
-}
+  }
 }
 </style>
