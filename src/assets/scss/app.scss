@@ -9,14 +9,22 @@
 }
 
 body {
-    background-color: #2f3136 !important;
+    background-color: var(--featured-dark) !important;
     color: var(--light) !important;
 }
+
+hr {
+    color: var(--light);
+}
+
 .card {
-  background-color: #40444b !important;
+  background-color:var(--featured-second-dark)!important;
   color: var(--light);
 }
 
+.modal-title {
+    color: var(--featured-second-dark);
+}
 .btn-primary {
     border-color: var(--featured) !important;
     background-color: var(--featured) !important;

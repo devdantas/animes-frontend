@@ -84,7 +84,7 @@ export default {
     }
   }
   .nome-looping {
-    color: #4d535f;
+    color: var(--light);
     font-weight: 600;
     text-align: center;
     display: table;

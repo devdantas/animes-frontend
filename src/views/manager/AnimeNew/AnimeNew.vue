@@ -304,13 +304,14 @@ export default {
 
 <style lang="scss" scoped>
 .btn-primary {
-  color: white !important;
+  color: var(--light) !important;
 }
 .episodeos {
-  background-color: #fff;
+  background-color: var(--light);
   border-radius: 10px;
   border: solid 0.5px var(--featured);
   padding: 13px;
+  color: var(--featured-second-dark);
 }
 
 .dados {

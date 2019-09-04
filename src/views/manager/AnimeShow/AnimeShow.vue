@@ -11,22 +11,22 @@
           <div class="description mb-3">
             <span>
               <i class="fas fa-calendar-alt"></i>
-              <label class="text-muted ml-2">Exibido em: {{this.specific.year}}</label>
+              <label class="ml-2">Exibido em: {{this.specific.year}}</label>
             </span>
             <br />
             <span>
               <i class="fas fa-file-video"></i>
-              <label class="text-muted ml-2">Tipo: {{this.specific.type.name}}</label>
+              <label class="ml-2">Tipo: {{this.specific.type.name}}</label>
             </span>
             <br />
             <span>
               <i class="fas fa-compact-disc"></i>
-              <label class="text-muted ml-2">Qualidade: {{this.specific.typeRaw.name}}</label>
+              <label class="ml-2">Qualidade: {{this.specific.typeRaw.name}}</label>
             </span>
             <br />
             <span>
               <i class="fas fa-film"></i>
-              <label class="text-muted ml-2">Quantidade: {{this.specific.numberEpisodes}}</label>
+              <label class="ml-2">Quantidade: {{this.specific.numberEpisodes}}</label>
             </span>
           </div>
         </div>
@@ -297,11 +297,11 @@ export default {
 }
 
 .description {
-  background-color: #f6f7f9;
+  background-color: var(--featured-second-dark);
   border-radius: 10px;
   border: solid 0.5px var(--featured);
   padding: 12px;
-
+  color: var(--light);
   i {
     font-size: 1.5em;
     color: var(--featured-second);
@@ -335,14 +335,14 @@ export default {
 }
 
 .sinopse {
-  background-color: #f6f7f9;
+  background-color: var(--featured-second-dark);
   border-radius: 10px;
   border: solid 0.5px var(--featured);
   padding: 12px;
 }
 
 .backlabel {
-  background-color: #f6f7f9;
+  background-color: var(--featured-second-dark);
   border-radius: 40px;
   border: solid 0.5px var(--featured);
   font-size: 15px;

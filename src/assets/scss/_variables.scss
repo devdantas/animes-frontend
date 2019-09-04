@@ -1,7 +1,11 @@
 $featured: #e84e89;
 $featured-second: #d34178;
+$featured-dark: #2f3136;
+$featured-second-dark: #40444b; 
 
 :root{
   --featured: #{$featured};
   --featured-second: #{$featured-second};
+  --featured-dark: #{$featured-dark};
+  --featured-second-dark: #{$featured-second-dark};
 }
