@@ -4,7 +4,10 @@ import routes from './routes'
 
 Vue.use(Router)
 
-const router = new Router({ routes })
+const router = new Router({
+  routes,
+  mode: 'history'
+})
 
 router.beforeEach((to, from, next) => {
   if (!to.matched.length) {

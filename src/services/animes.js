@@ -7,6 +7,9 @@ export default {
   show: (slug) => {
     return http.get(`/anime/${slug}`)
   },
+  indexEp: (page) => {
+    return http.get(`/episodeo/${page}`)
+  },
   add: (episodeos, animeId) => {
     return http.post(`/episodeo/add-episodeo/${animeId}`, episodeos)
   },

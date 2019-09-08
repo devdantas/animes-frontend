@@ -182,6 +182,20 @@
                     required
                   />
                 </div>
+                <div class="form-group col-sm-12">
+                  <div class="custom-control custom-checkbox">
+                    <input 
+                      type="checkbox" 
+                      class="custom-control-input" 
+                      id="customCheck1"
+                      value="true"
+                      v-model="form.episodeos[0].pageHome"
+                    >
+                    <label class="custom-control-label" for="customCheck1">
+                      <b>Listar episódio na home</b>
+                    </label>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="modal-footer">
@@ -227,6 +241,7 @@ export default {
         episodeos: [
           {
             title: 'Episódio ',
+            pageHome: false,
             links: {
               link480p: '',
               link720p: '',
@@ -284,6 +299,13 @@ export default {
 <style lang="scss" scoped>
 .btn-primary {
   color: var(--light) !important;
+}
+
+.modal-body {
+  color: var(--featured-second-dark) !important;
+}
+.custom-control-label:hover {
+  cursor: pointer;
 }
 
 .capa-looping {

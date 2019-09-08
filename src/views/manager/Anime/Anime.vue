@@ -91,16 +91,5 @@ export default {
     width: 100%;
     margin-bottom: 10px;
   }
-
-  .classificacao {
-    display: inline-block;
-    margin-left: 10px;
-    background-color: transparent;
-    color: #fff;
-    padding: 3px 7px;
-    position: absolute;
-    top: 0;
-    right: 5px;
-  }
 }
 </style>

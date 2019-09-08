@@ -96,8 +96,17 @@ body {
 }
 
 .swiper-container {
-  width: 100%;
+  width: 100%;  
   height: 80vh;
+  @media (min-width: 992px) {
+    height: 80vh;
+  }
+  @media (min-width: 1200px) { 
+    height: 80vh;
+  }
+  @media (min-width: 1920px) { 
+    height: 52vh;
+  }
 }
 
 .swiper-slide {
