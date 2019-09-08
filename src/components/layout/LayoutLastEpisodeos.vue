@@ -52,7 +52,7 @@ export default {
      this.$root.$emit('Spinner::show')
       await Episodeos.indexEp(page).then(res => {
         this.list = res.data.episodeo
-        this.totalpages = res.data.episodeo.total
+        this.totalpages = res.data.episodeo.pages
       })
      this.$root.$emit('Spinner::hide')
     },
