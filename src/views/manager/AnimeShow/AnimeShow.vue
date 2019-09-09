@@ -76,6 +76,7 @@
               <div class="col-lg-12" id="off">
                 <button
                   @click="showModal = true"
+                  v-if="token"
                   class="btn btn-sm btn-outline-primary"
                 >Adicionar Episódio</button>
               </div>
@@ -124,7 +125,7 @@
         <!-- #fim dados -->
       </div>
     </div>
-    <form @submit.prevent="adicionar">
+    <form v-if="token" @submit.prevent="adicionar">
       <div
         id="modalL"
         class="modal fade"
@@ -236,7 +237,7 @@ export default {
       showModal: false,
       specific: [],
       slug: this.$attrs.slug,
-      token: false,
+      token: sessionStorage.getItem('userToken'),
       form: {
         episodeos: [
           {

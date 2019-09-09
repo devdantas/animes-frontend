@@ -3,9 +3,11 @@
     <base-spinner/>
     <layout-notification/>
 
-    <layout-navigation v-if="showNavBar"/>
-    
-    <router-view/>
+      <layout-navigation v-if="showNavBar"/>
+
+      <main>
+        <router-view/>
+      </main>
   </div>
 </template>
 
@@ -29,20 +31,17 @@ export default {
       }
     }
   },
-  mounted () {
-    if(sessionStorage.userToken == null){
-      setTimeout(() =>{
-        this.$root.$emit('Spinner::hide')
-      },300);
-      this.$router.push({ name: 'login'})
-    }
-    
-    setTimeout(() =>{
-      this.$root.$emit('Spinner::hide')
-    },300);
-  }
+  mounted() {
+    this.$root.$emit('Spinner::hide')
+  },
 }
 </script>
 
 <style lang="scss">
+footer{
+  width: 100%;
+  height: 50px;
+  margin: auto;
+  bottom: 0;
+}
 </style>

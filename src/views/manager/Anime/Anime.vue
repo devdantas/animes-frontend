@@ -1,22 +1,27 @@
 <template>
   <div class="anime">
     <div class="container">
-      <h2 class="pt-2">Animes</h2>
-        <button
-          v-if="token"
-          @click="openPageAddAnime" 
-          type="button"
-          class="btn btn-sm btn-outline-primary"
-        >
+      <h2 class="pt-3">Animes</h2>
+        <template v-if="token">
+          <button
+            @click="openPageAddAnime" 
+            type="button"
+            class="btn btn-sm btn-outline-primary"
+          >
             Adicionar anime
-        </button>
-      <hr>
-
-      <div class="row">
+          </button>
+        </template>   
+        <hr>
+        <div class="row justify-content-end">
+          <div class="col-sm-4 col-lg-4 col-md-4">
+            <input class="form-control form-control-sm" type="text" v-model="search" placeholder="Buscar anime">
+          </div>
+        </div>    
+      <div class="row" v-if="filtrarAnimes.length > 0">
         <div 
           :key="index"
           class="col-lg-2 col-md-4 py-3"
-          v-for="(item, index) in catalago"
+          v-for="(item, index) in filtrarAnimes"
         >
           <div class="anime-looping">
             <div
@@ -29,30 +34,46 @@
           </div>
         </div>
       </div>
+      <div class="row" v-else>
+        <div class="col-sm-12">
+          <h1>Não encontrado: {{this.search}}</h1>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import Animes from '../../../services/animes'
+import { setTimeout } from 'timers';
 export default {
-  name: "animes",
+  name: 'animes',
   data () {
     return {
-      token: true,
+      search: '',
+      token: sessionStorage.getItem('userToken'),
       catalago: []
+    }
+  },
+  computed: {
+    filtrarAnimes() {
+       return this.catalago.filter(c => {
+        return c.name.toLowerCase().includes(this.search.toLowerCase())
+      })
     }
   },
   created () {
     this.listar()
   },
-  methods: {
-    async listar() {
+  methods: {    
+    async listar() {      
      this.$root.$emit('Spinner::show')
       await Animes.index().then(res => {
         this.catalago = res.data.anime
       })
-     this.$root.$emit('Spinner::hide')
+      setTimeout(() =>{
+        this.$root.$emit('Spinner::hide')
+      },1500);
     },
     
     openShowAnime(slug){
@@ -67,6 +88,11 @@ export default {
 
 
 <style lang="scss" scoped>
+.page-link {
+  &:hover {
+    cursor: pointer;
+  }
+}
 .anime-looping {
   .capa-looping {
     height: 33vh;

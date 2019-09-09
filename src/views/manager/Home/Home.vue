@@ -5,7 +5,7 @@
       </div>
       <div class="container-fluid mt-3">
         <div id="swiper-recent">
-          <h4>Séries adicionadas recentemente:</h4>
+          <h3>Séries adicionadas recentemente:</h3>
           <swiper-recent/>
         </div>
         <div class="row mt-3 mb-5">

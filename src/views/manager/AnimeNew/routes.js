@@ -1,6 +1,6 @@
 export default [
   {
-    path: '/manager-add-anime',
+    path: '/animes/adicionar',
     name: 'add-anime',
     beforeEnter: function (to, from, next) {
       const token = sessionStorage.getItem('userToken')

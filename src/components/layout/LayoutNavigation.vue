@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f6f7f9; box-shadow: 0px 0px 5px 1px #d34178;">
-    <a class="navbar-brand" href="#/manager-home">
+    <a class="navbar-brand" href="/manager-home">
       <img src="https://image.flaticon.com/icons/png/128/753/753352.png" width="30" height="30" class="d-inline-block align-top" alt="">
       Animes Free
     </a>
@@ -9,29 +9,36 @@
     </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <router-link
-            :key="index"
-            tag="li"
-            exact-active-class="active"
-            :to="{ name: item.name }"
-            v-for="(item, index) in routes"
-            class="nav-item"
-            style="text-decoration: none;"
-          >
-            <a href="#" class="nav-link">
-              {{ item.meta.title }}
-            </a>
-          </router-link>
+      <template>
+        <router-link
+          :key="index"
+          tag="li"
+          exact-active-class="active"
+          :to="{ name: item.name }"      
+          v-for="(item, index) in routesM"
+          class="nav-item"
+          style="text-decoration: none;"
+        >
+          <a href="#" class="nav-link">
+            {{ item.meta.title }}
+          </a>
+        </router-link>
+      </template>
     </ul>
-    <button class="btn btn-danger my-2 my-sm-0" @click="logout">Sair</button>
+    <button v-if="token" class="btn btn-danger my-2 my-sm-0" @click="logout">Sair</button>
   </div>
 </nav>
 </template>
 
 <script>
 export default {
+  data () {
+    return {
+      token: sessionStorage.getItem('userToken')
+    }
+  },
   computed: {
-    routes() {
+    routesM() {
       return this.$router.options.routes.filter(route => route.meta);
     }
   },
@@ -43,10 +50,10 @@ export default {
     showMenu () {
       let divDisplay = document.getElementById('navbarTogglerDemo01')
       
-      if(divDisplay.style.display == ""){
-        divDisplay.style.display = "block"
+      if(divDisplay.style.display == ''){
+        divDisplay.style.display = 'block'
       }else{
-        divDisplay.style.display = ""
+        divDisplay.style.display = ''
       }
     }
   }

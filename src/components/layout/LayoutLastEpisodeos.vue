@@ -4,7 +4,7 @@
       <div 
         :key="index"
         v-for="(item, index) in list.docs"
-        class="col-lg-3 col-md-5 py-3">
+        class="col-lg-3 col-md-4 col-sm-6 py-3">
         <div class="anime-looping">
           <div
             @click="openShowAnime(item.anime.slug)"

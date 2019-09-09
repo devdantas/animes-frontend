@@ -9,7 +9,7 @@
         <h5>Erro 404</h5>
       </div>
       <div class="row justify-content-center">
-        <router-link to="/login">Voltar</router-link>
+        <router-link to="/">Voltar</router-link>
       </div>      
     </div>
   </div>  

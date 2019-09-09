@@ -242,9 +242,9 @@ export default {
     };
   },
   created() {
-    this.getType();
-    this.getTypeRaw();
-    this.getGenders();
+    this.getType()
+    this.getTypeRaw()
+    this.getGenders()
   },
   methods: {
     clearInputs(){
@@ -262,11 +262,9 @@ export default {
     submit() {
       this.loading = true;
       Anime.createNewAnime(this.form).then(res => {
-        console.log(res)
         this.clearInputs()
         this.loading = false
       }).catch(err => {
-        console.log(err)
         this.clearInputs()
         this.loading = false
       })
