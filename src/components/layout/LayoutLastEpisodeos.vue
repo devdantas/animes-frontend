@@ -3,7 +3,7 @@
     <div class="row">
       <div 
         :key="index"
-        v-for="(item, index) in list.docs"
+        v-for="(item, index) in filterAnime"
         class="col-lg-3 col-md-4 col-sm-6 py-3">
         <div class="anime-looping">
           <div
@@ -36,12 +36,18 @@
 
 <script>
 import Episodeos from '../../services/animes'
+import orderBy from 'lodash.orderby'
 export default {
   name: 'last-episodeos',
   data () {
     return {
       list: [],
       totalpages: ''
+    }
+  },
+  computed: {
+    filterAnime() {
+      return this.list    
     }
   },
   created () {
@@ -51,13 +57,16 @@ export default {
     async listar(page) {
      this.$root.$emit('Spinner::show')
       await Episodeos.indexEp(page).then(res => {
-        this.list = res.data.episodeo
+        this.list = res.data.episodeo.docs
         this.totalpages = res.data.episodeo.pages
       })
      this.$root.$emit('Spinner::hide')
     },
     openShowAnime(slug){
       this.$router.push({name: 'showanime', params: {slug: slug}})
+    },
+    compare(a,b) {
+      return a.data < b.data;
     }
   }
 }

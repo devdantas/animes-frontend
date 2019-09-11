@@ -30,7 +30,8 @@
               :style="{ background: `url('${item.thumb}') center / cover no-repeat`}" 
             >
             </div>
-            <div class="nome-looping">{{item.name}}</div>
+            <div v-if="item.episodeos.length > 0" class="nome-looping">{{item.name}}</div>
+            <div v-else class="nome-looping" style="color: #ec3c3c">{{item.name}}</div>
           </div>
         </div>
       </div>
