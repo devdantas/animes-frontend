@@ -264,9 +264,17 @@ export default {
       Anime.createNewAnime(this.form).then(res => {
         this.clearInputs()
         this.loading = false
+        this.$root.$emit('Notification::show', {
+          type: 'success',
+          message: 'Anime cadastrado com sucesso!'
+        })
       }).catch(err => {
         this.clearInputs()
         this.loading = false
+        this.$root.$emit('Notification::show', {
+          type: 'danger',
+          message: 'Erro ao cadastrar, tente novamente!'
+        })
       })
     },
     getType() {
