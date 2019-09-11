@@ -269,7 +269,6 @@ export default {
           message: 'Anime cadastrado com sucesso!'
         })
       }).catch(err => {
-        this.clearInputs()
         this.loading = false
         this.$root.$emit('Notification::show', {
           type: 'danger',
