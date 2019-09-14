@@ -129,7 +129,7 @@
       <div class="row mt-5">
         <div class="col-sm-12 col-lg-12 col-md-12">
           <div class="comments p-2">
-            <vue-disqus shortname="animes-free-v" :title="this.specific.name"></vue-disqus>
+            <vue-disqus shortname="animesfree-1" :title="this.specific.name"></vue-disqus>
           </div>
         </div>
       </div>
