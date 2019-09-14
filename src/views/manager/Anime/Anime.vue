@@ -65,6 +65,7 @@ export default {
   },
   created () {
     this.listar()
+    document.title = "Animes"
   },
   methods: {    
     async listar() {      

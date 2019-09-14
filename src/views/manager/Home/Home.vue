@@ -43,6 +43,9 @@ export default {
     SwiperPrime,
     SwiperRecent,
     LastEpisodeos
+  },
+  created() {
+    document.title = "AnimesFree"
   }
 }
 </script>

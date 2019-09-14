@@ -124,6 +124,16 @@
         </div>
         <!-- #fim dados -->
       </div>
+
+      <!-- comment -->
+      <div class="row mt-5">
+        <div class="col-sm-12 col-lg-12 col-md-12">
+          <div class="comments p-2">
+            <vue-disqus shortname="animes-free-v" :title="this.specific.name"></vue-disqus>
+          </div>
+        </div>
+      </div>
+      <!-- #fim comment -->
     </div>
     <form v-if="token" @submit.prevent="adicionar">
       <div
@@ -263,7 +273,8 @@ export default {
     async show() {
       this.$root.$emit("Spinner::show")
       await Animes.show(this.slug).then(res => {
-        this.specific = res.data.anime[0]
+        this.specific = res.data.anime[0] 
+        document.title = res.data.anime[0].name
       }).catch(err => {
         if(err.response.data.error === "Anime not register"){
           this.$router.push({name: 'erro'})
@@ -298,6 +309,9 @@ export default {
 
 
 <style lang="scss" scoped>
+.border-primary {
+  border: solid 0.5px var(--light) !important;
+}
 .btn-primary {
   color: var(--light) !important;
 }
