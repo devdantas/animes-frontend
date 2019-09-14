@@ -32,7 +32,9 @@ export default {
     }
   },
   mounted() {
-    this.$root.$emit('Spinner::hide')
+    setTimeout(() =>{
+      this.$root.$emit('Spinner::show')
+    },3000);
   },
 }
 </script>
