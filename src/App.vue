@@ -3,11 +3,9 @@
     <base-spinner/>
     <layout-notification/>
 
-      <layout-navigation v-if="showNavBar"/>
-
-      <main>
-        <router-view/>
-      </main>
+    <layout-navigation v-if="showNavBar"/>
+      <router-view/>
+    <layout-footer/>
   </div>
 </template>
 
@@ -15,6 +13,7 @@
 import BaseSpinner from './components/global/BaseSpinner'
 import LayoutNotification from './components/global/LayoutNotification'
 import LayoutNavigation from './components/layout/LayoutNavigation'
+import LayoutFooter from './components/layout/LayoutFooter'
 import { setTimeout } from 'timers';
 
 export default {
@@ -22,7 +21,8 @@ export default {
   components: {
     BaseSpinner,
     LayoutNotification,
-    LayoutNavigation
+    LayoutNavigation,
+    LayoutFooter
   },
   computed: {
     showNavBar(){

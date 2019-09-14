@@ -32,7 +32,7 @@ export default {
   bottom:0;
   right:0;
   left:0;
-  z-index: 1000000;
+  z-index: 1000;
   position: absolute;
   width:100vw;
   height:100vh;
