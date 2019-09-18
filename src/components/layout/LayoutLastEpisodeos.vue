@@ -55,12 +55,15 @@ export default {
   },
   methods: {
     async listar(page) {
-     this.$root.$emit('Spinner::show')
       await Episodeos.indexEp(page).then(res => {
         this.list = res.data.episodeo.docs
         this.totalpages = res.data.episodeo.pages
+      }).catch(err => {
+        this.$root.$emit('Notification::show', {
+          type: 'danger',
+          message: 'Ocorreu algum erro, tente mais tarde!'
+        })
       })
-     this.$root.$emit('Spinner::hide')
     },
     openShowAnime(slug){
       this.$router.push({name: 'showanime', params: {slug: slug}})

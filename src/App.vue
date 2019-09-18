@@ -30,12 +30,7 @@ export default {
         return this.$route.name
       }
     }
-  },
-  mounted() {
-    setTimeout(() =>{
-      this.$root.$emit('Spinner::hide')
-    },1500);
-  },
+  }
 }
 </script>
 

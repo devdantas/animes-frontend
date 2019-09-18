@@ -271,7 +271,6 @@ export default {
       this.showModal = false
     },
     async show() {
-      this.$root.$emit("Spinner::show")
       await Animes.show(this.slug).then(res => {
         this.specific = res.data.anime[0] 
         document.title = res.data.anime[0].name
@@ -280,7 +279,6 @@ export default {
           this.$router.push({name: 'erro'})
         }
       })
-      this.$root.$emit("Spinner::hide")
     },
     clearInputs () {
       this.form.episodeos[0].title = "Episódio "

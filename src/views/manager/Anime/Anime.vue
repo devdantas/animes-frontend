@@ -69,13 +69,14 @@ export default {
   },
   methods: {    
     async listar() {      
-     this.$root.$emit('Spinner::show')
       await Animes.index().then(res => {
         this.catalago = res.data.anime
+      }).catch(err => {
+        this.$root.$emit('Notification::show', {
+          type: 'danger',
+          message: 'Ocorreu algum erro, tente mais tarde!'
+        })
       })
-      setTimeout(() =>{
-        this.$root.$emit('Spinner::hide')
-      },1500);
     },
     
     openShowAnime(slug){
