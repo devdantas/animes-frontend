@@ -1,9 +1,8 @@
 .DS_Store
 node_modules
 /deploy
-/dist
+animes-frontend/dist
 firedeploy.bat
-dist
 
 # local env files
 .env.local

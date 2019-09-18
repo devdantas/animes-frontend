@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <base-spinner/>
     <layout-notification/>
 
     <layout-navigation v-if="showNavBar"/>
