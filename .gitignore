@@ -2,7 +2,6 @@
 node_modules
 deploy
 firedeploy.bat
-/dist
 
 # local env files
 .env.local

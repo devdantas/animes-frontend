@@ -33,8 +33,8 @@ export default {
   },
   mounted() {
     setTimeout(() =>{
-      this.$root.$emit('Spinner::show')
-    },3000);
+      this.$root.$emit('Spinner::hide')
+    },1500);
   },
 }
 </script>
