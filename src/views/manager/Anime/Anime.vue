@@ -35,17 +35,26 @@
           </div>
         </div>
       </div>
-      <div class="row" v-else>
+      <div class="row mt-5" v-else>
         <div class="col-sm-12">
-          <h1>Não encontrado: {{this.search}}</h1>
+          <loading-anime/>
         </div>
       </div>
     </div>
+    <footer v-if="filtrarAnimes.length > 0">      
+      <layout-footer/>
+    </footer>
+    <footer v-else>
+      <layout-footer class="footer1" />
+    </footer>
   </div>
+  
 </template>
 
 <script>
 import Animes from '../../../services/animes'
+import LoadingAnime from '../../../components/global/LoadingAnime'
+import LayoutFooter from '../../../components/layout/LayoutFooter'
 import { setTimeout } from 'timers';
 export default {
   name: 'animes',
@@ -55,6 +64,10 @@ export default {
       token: sessionStorage.getItem('userToken'),
       catalago: []
     }
+  },
+  components: {
+    LoadingAnime,
+    LayoutFooter
   },
   computed: {
     filtrarAnimes() {
@@ -91,6 +104,13 @@ export default {
 
 
 <style lang="scss" scoped>
+.footer1 {
+  position:fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  clear: both;
+}
 .page-link {
   &:hover {
     cursor: pointer;

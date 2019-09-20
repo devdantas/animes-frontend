@@ -228,6 +228,9 @@
       :style="{display: showModal ? 'block' : 'none'}"
       :class="{show: showModal}"
     ></div>
+    <footer>      
+      <layout-footer/>
+    </footer>
   </div>
 </template>
 
@@ -235,11 +238,14 @@
 import Animes from "../../../services/animes"
 import LayoutModal from "../../../components/layout/LayoutModalPutEp"
 import LayoutPlayer from "../../../components/layout/LayoutPlayerVideo"
+import LayoutFooter from '../../../components/layout/LayoutFooter'
+
 export default {
   name: 'showanime',
   components: {
     LayoutModal,
-    LayoutPlayer
+    LayoutPlayer,
+    LayoutFooter
   },
   data() {
     return {

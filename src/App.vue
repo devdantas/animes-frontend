@@ -1,27 +1,27 @@
 <template>
   <div id="app">
+    <base-spinner/>
     <layout-notification/>
 
-    <layout-navigation v-if="showNavBar"/>
+    <header>
+      <layout-navigation v-if="showNavBar"/>
+    </header>
+    <main>
       <router-view/>
-    <layout-footer/>
+    </main>
   </div>
 </template>
 
 <script>
-import BaseSpinner from './components/global/BaseSpinner'
 import LayoutNotification from './components/global/LayoutNotification'
 import LayoutNavigation from './components/layout/LayoutNavigation'
-import LayoutFooter from './components/layout/LayoutFooter'
 import { setTimeout } from 'timers';
 
 export default {
   name: 'App',
   components: {
-    BaseSpinner,
     LayoutNotification,
     LayoutNavigation,
-    LayoutFooter
   },
   computed: {
     showNavBar(){
@@ -34,10 +34,4 @@ export default {
 </script>
 
 <style lang="scss">
-footer{
-  width: 100%;
-  height: 50px;
-  margin: auto;
-  bottom: 0;
-}
 </style>

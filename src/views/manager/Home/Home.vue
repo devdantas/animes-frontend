@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+      <base-spinner/>
       <div id="swiper-prime">
         <swiper-prime/>
       </div>
@@ -29,23 +30,35 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>      
+      <footer>      
+        <layout-footer/>
+      </footer>
   </div>
 </template>
 
 <script>
+import BaseSpinner from '../../../components/global/BaseSpinner'
 import SwiperPrime from '../../../components/layout/LayoutSwiper'
 import SwiperRecent from '../../../components/layout/LayoutSwiperR'
 import LastEpisodeos from '../../../components/layout/LayoutLastEpisodeos'
+import LayoutFooter from '../../../components/layout/LayoutFooter'
 export default {
   name: "home",
   components: {
+    BaseSpinner,
     SwiperPrime,
     SwiperRecent,
-    LastEpisodeos
+    LastEpisodeos,
+    LayoutFooter
   },
   created() {
     document.title = "AnimesFree"
+  },
+  mounted() {
+    setTimeout(() =>{
+      this.$root.$emit('Spinner::hide')
+    },1500);
   }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <nav style="background-color: #f6f7f9;">
+  <nav class="footer" style="background-color: #f6f7f9;">
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-lg-3 col-md-3 p-3 pl-5">

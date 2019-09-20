@@ -34,12 +34,13 @@ export default {
   left:0;
   z-index: 100000;
   position: absolute;
-  width:100vw;
+  width:100%;
   height:100vh;
   display:flex;
   align-items: center;
   justify-content: center;
   background-color: var(--light);
   color: var(--featured);
+  overflow:hidden;
 }
 </style>
