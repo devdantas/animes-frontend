@@ -1,28 +1,28 @@
 {
   "contents": [
     {
-      "title": "Tate no Yuusha no Nariagari",
-      "descricao": "Tate no Yuusha (apelidado de ‘ShieldBro’) acompanha um universitário que acaba indo parar em um mundo de fantasia, junto a outros estudantes. Cada um deles recebe uma arma lendária, sendo a do protagonista um escudo. Traído logo que chega lá, ele muda rapidamente sua atitude positiva para o ódio e desejo de vingança, até que encontra uma pequena escrava, que começa a ajudá-lo a mudar.",
-      "generos": "Ação, Aventura, Comédia, Drama, Fantasia, Romance, Seinen",
-      "slug": "tate-no-yuusha-no-nariagari",
+      "title": "Kimetsu no Yaiba",
+      "descricao": "Desde os tempos antigos, abundam os rumores sobre demônios devoradores de homens à espreita na floresta. Por causa disso, os moradores locais nunca se aventuram externamente durante a noite. Diz a lenda que um matador de demônios também perambula pela noite, caçando esses seres sanguinários. Para o jovem Tanjirou, esses rumores logo se tornarão sua dura realidade ...",
+      "generos": "Ação, Demônios, Histórico, Shounen, Sobrenatural.",
+      "slug": "kimetsu-no-yaiba",
       "rgb": "rgb(147, 165, 165)",
-      "img": "https://i.ibb.co/ZgBjrMR/tate-no-yuusha.png"
+      "img": "https://i.ibb.co/PGKh2Zd/dd4d6r9-a23b65cf-31da-4ed2-bd44-431451191118.png"
     },
     {
-      "title": "One Punch-man",
-      "descricao": "Conta o dia-a-dia de um herói normal que está infeliz por ser forte o bastante para derrotar todos os seus oponentes com apenas um soco, já que isso não lhe traz mais a sensação de adrenalina ao enfrentar um inimigo poderoso.",
-      "generos": "Ação, Aventura, Comédia.",
-      "slug": "one-punch-man",
-      "rgb": "rgb(239, 199, 18)",
-      "img": "https://i.ibb.co/Kys09bg/one-p.png"
+      "title": "Araburu Kisetsu no Otome-domo yo",
+      "descricao": "As meninas de um clube de literatura do ensino médio fazem uma brincadeira para se conhecerem: respondendo à pergunta: 'O que você quer fazer antes de morrer?' Uma das garotas diz: 'Sexo'. Mal sabem elas, mas o turbilhão desencadeado por essa palavra levará cada uma dessas meninas, com diferentes origens e personalidades, em seus próprios caminhos desajeitados, engraçados, dolorosos e emocionais em direção à idade adulta.",
+      "generos": "Drama, Escolar, Shounen.",
+      "slug": "araburu-kisetsu-no-otome-domo-yo",
+      "rgb": "rgb(175, 204, 216)",
+      "img": "https://i.ibb.co/xCj0cy8/dd13e1w-337544e5-e6f4-41a0-b153-c59c7b399efa.png"
     },
     {
-      "title": "Black Clover",
-      "descricao": "Em um mundo aonde todos nascem com poderes mágicos, Asta é a única exceção, enquanto seu amigo, Yuno, nasceu abençoado com grandes poderes mágicos. Quando completam 15 anos, os dois recebem itens que ampliam seus poderes, com Asta ganhando um raro Anti-Magic Grimoire, que permite a ele anular ou repelir magia. Agora ambos vão tentar realizar seu sonho em comum de se tornar um Wizard King.",
-      "generos": "Ação, Aventura, Comédia, Fantasia, Magia, Shounen.",
-      "slug": "black-clover",
-      "rgb": "rgb(33, 19, 12)",
-      "img": "https://i.ibb.co/PCXQFG8/black-clover.png"
+      "title": "Kanata no Astra",
+      "descricao": "No ano de 2063, viajar pelo espaço tornou-se comum. Oito alunos do Colégio Caird, juntamente com uma criança, partiram para um acampamento escolar em um planeta próximo. No entanto, os alunos são misteriosamente transportados a 5.012 anos-luz de distância de casa, sem meios de pedir ajuda. A bordo de uma espaçonave abandonada que chamam de Astra, esses nove estudantes lentamente tentam voltar e descobrir por que eles foram transportados.",
+      "generos": "Ação, Sci-fi, Shounen.",
+      "slug": "kanata-no-astra",
+      "rgb": "rgb(69, 85, 136)",
+      "img": "https://i.ibb.co/mDvNfbb/dczo0iw-fc7cd844-cbd2-4e35-b725-e2752159b6ee.png"
     }    
   ]
 }

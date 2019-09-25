@@ -4,13 +4,36 @@
 @import '../../../node_modules/swiper/dist/css/swiper.css';
 @import 'variables';
 
+
 * {
     font-family: 'Poopins', sans-serif;
 }
 
-body {
+html,body {
     background-color: var(--featured-dark) !important;
     color: var(--light) !important;
+    height: 100%;
+    margin: 0
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 hr {
@@ -19,19 +42,20 @@ hr {
 }
 
 .card {
-  background-color:var(--featured-second-dark)!important;
-  color: var(--light);
+    background-color: var(--featured-second-dark) !important;
+    color: var(--light);
 }
 
 .modal-title {
     color: var(--featured-second-dark);
 }
+
 .btn-primary {
     border-color: var(--featured) !important;
     background-color: var(--featured) !important;
     color: var(--ligth) !important;
 
     &:hover {
-        background-color: var(--featured-second) !important;  
+        background-color: var(--featured-second) !important;
     }
 }

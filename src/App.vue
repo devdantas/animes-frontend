@@ -6,15 +6,20 @@
     <header>
       <layout-navigation v-if="showNavBar"/>
     </header>
-    <main>
+    <main class="wrapper">
       <router-view/>
     </main>
+    <div class="push"></div>
+    <footer class="footer">
+      <layout-footer/>
+    </footer>
   </div>
 </template>
 
 <script>
 import LayoutNotification from './components/global/LayoutNotification'
 import LayoutNavigation from './components/layout/LayoutNavigation'
+import LayoutFooter from './components/layout/LayoutFooter'
 import { setTimeout } from 'timers';
 
 export default {
@@ -22,6 +27,7 @@ export default {
   components: {
     LayoutNotification,
     LayoutNavigation,
+    LayoutFooter
   },
   computed: {
     showNavBar(){
@@ -34,4 +40,12 @@ export default {
 </script>
 
 <style lang="scss">
+.wrapper {
+  min-height: 100%;
+  margin-bottom: -100px;
+}
+.footer, .push {
+    min-height: 168px;
+    max-height: 140px;
+}
 </style>

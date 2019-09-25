@@ -1,6 +1,6 @@
 <template>
   <div class="anime">
-    <div class="container mb-3">
+    <div class="container">
       <hr />
       <div class="row">
         <div class="col-lg-3 col-sm-12">
@@ -228,9 +228,6 @@
       :style="{display: showModal ? 'block' : 'none'}"
       :class="{show: showModal}"
     ></div>
-    <footer>      
-      <layout-footer/>
-    </footer>
   </div>
 </template>
 

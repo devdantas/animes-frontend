@@ -4,12 +4,16 @@
       <div id="swiper-prime">
         <swiper-prime/>
       </div>
-      <div class="container-fluid mt-3">
+      <div class="container mt-2 mb-1">
         <div id="swiper-recent">
-          <h3>Séries adicionadas recentemente:</h3>
+          <div class="title-temporada mb-2">
+            <h2>Animes da Temporada</h2>
+          </div>
           <swiper-recent/>
         </div>
-        <div class="row mt-3 mb-5">
+      </div>
+      <div class="container-fluid mt-3">
+        <div class="row mt-3">
           <div class="col-lg-9 col-sm-12">
             <div class="card pt-2 pb-2 pl-2 pr-2">
               <h3 class="text-center">Últimos lançamentos</h3>
@@ -19,21 +23,29 @@
             </div>
           </div>
           <div class="col-lg-3 col-sm-12">
-            <div class="card pt-2 pb-2 pl-2 pr-2">
-              <iframe 
-                src="https://discordapp.com/widget?id=553382137391480843&theme=dark" 
-                width="100%" 
-                height="300" 
-                allowtransparency="true" 
-                frameborder="0">
-              </iframe>           
+            <div class="row">
+              <div class="col-sm-12 col-lg-12 col-md-12">
+                <div class="card text-center pt-2 mb-2">
+                  <h3>Acesse nosso Discord</h3>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-lg-12 col-md-12">
+                <div class="card pt-2 pb-2 pl-2 pr-2">
+                  <iframe 
+                    src="https://discordapp.com/widget?id=553382137391480843&theme=dark" 
+                    width="100%" 
+                    height="300" 
+                    allowtransparency="true" 
+                    frameborder="0">
+                  </iframe>           
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>      
-      <footer>      
-        <layout-footer/>
-      </footer>
   </div>
 </template>
 
@@ -53,7 +65,7 @@ export default {
     LayoutFooter
   },
   created() {
-    document.title = "AnimesFree"
+    document.title = "Animes Free"
   },
   mounted() {
     setTimeout(() =>{
@@ -67,5 +79,13 @@ export default {
 <style lang="scss" scoped>
 .border-primary {
   border: solid 0.5px var(--featured) !important;
+}
+#swiper-recent {
+  .title-temporada {
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: var(--featured-second-dark);
+  }
 }
 </style>

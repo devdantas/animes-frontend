@@ -21,7 +21,7 @@
                   class="div-title"
                   style="opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"
                 >
-                  <h1>{{ item.title }}</h1>
+                  <h2>{{ item.title }}</h2>
                 </div>
                 <div
                   data-swiper-parallax="-100"
@@ -36,11 +36,12 @@
                     <b>{{ item.generos }}</b>
                   </p>
                   <p>
-                    <button
+                    <router-link
                       data-swiper-parallax="-100"
-                      type="button"
+                      tag="button"
+                      :to="{name: 'showanime', params: {slug: item.slug}}"
                       class="btn btn-md btn-primary"
-                    >Acessar</button>
+                    >Acessar</router-link>
                   </p>
                 </div>
               </div>
@@ -114,6 +115,10 @@ body {
   color: #fff;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+
+  h2 {
+    font-size: 2.1rem;
+  }
 
   .title {
     font-size: 41px;

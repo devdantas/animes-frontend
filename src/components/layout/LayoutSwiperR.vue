@@ -4,51 +4,21 @@
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <img src="https://nerdgeekfeelings.com/wp-content/uploads/2014/07/shingeki-no-kyojin-poster.jpg">
-          <div class="label">
-            <label>
-              Shingeki no Kyojin - S1
-            </label>
-          </div>
         </div>        
         <div class="swiper-slide">
           <img src="https://static.posters.cz/image/750/plakaty/attack-on-titan-shingeki-no-kyojin-season-2-collage-key-art-i66601.jpg">
-          <div class="label">
-            <label>
-              Shingeki no Kyojin - S2
-            </label>
-          </div>
         </div>
         <div class="swiper-slide">
           <img src="http://anmtv.xpg.com.br/wp-content/uploads/shingeki-no-kyojin-poster-1.jpg">
-          <div class="label">
-            <label>
-              Shingeki no Kyojin - S3
-            </label>
-          </div>
         </div>
         <div class="swiper-slide">
           <img src="https://cdn.europosters.eu/image/750/posters/my-hero-academia-season-1-i56127.jpg">
-          <div class="label">
-            <label>
-              My Hero Academia - S1
-            </label>
-          </div>
         </div>
         <div class="swiper-slide">
           <img src="https://animesonline.site/wp-content/uploads/2019/06/MV5BYWQ0NGY3ODktY2YxMy00NDk3LWE4ZDYtMTdmNGZiNWU1MjM2XkEyXkFqcGdeQXVyNjc3OTE4Nzk@._V1_.jpg">
-          <div class="label">
-            <label>
-              My Hero Academia - S2
-            </label>
-          </div>
         </div>
         <div class="swiper-slide">
           <img src="https://img1.ak.crunchyroll.com/i/spire1/281089c6a9e64236a10e3b4232474e411532451975_full.jpg">
-          <div class="label">
-            <label>
-              My Hero Academia - S3
-            </label>
-          </div>
         </div>
       </div>
 
@@ -62,7 +32,7 @@ export default {
   name: "swiper-recent",
   mounted() {
     var swiper2 = new Swiper('.s2', {
-      slidesPerView: 6,
+      slidesPerView: 5,
       spaceBetween: 25,
       // init: false,
       pagination: {
@@ -79,7 +49,7 @@ export default {
           spaceBetween: 30,
         },
         640: {
-          slidesPerView: 1,
+          slidesPerView: 2,
           spaceBetween: 20,
         },
         320: {
@@ -93,17 +63,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-html, body {
-  position: relative;
-  height: 100%;
-}
 .swiper-container {
   width: 100%;
-  height: 50vh;
 
   @media (max-width: 576px) {
-    width: 80%;
-    height: 60vh;
+    width: 100%;
+    height: 30%;
   }  
 }
 .swiper-slide {

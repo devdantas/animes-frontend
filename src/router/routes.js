@@ -4,6 +4,7 @@ import { routes as Anime } from '../views/manager/Anime'
 import { routes as AnimeShow } from '../views/manager/AnimeShow'
 import { routes as AnimeNew } from '../views/manager/AnimeNew'
 import { routes as Player } from '../views/manager/Player'
+import { routes as Team } from '../views/manager/Teams'
 import { routes as erro404 } from '../components/global/404/'
 
 export default [
@@ -13,5 +14,6 @@ export default [
   ...Anime,
   ...AnimeShow,
   ...AnimeNew,
-  ...Player
+  ...Player,
+  ...Team
 ]

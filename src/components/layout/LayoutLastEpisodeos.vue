@@ -7,7 +7,7 @@
         class="col-lg-3 col-md-4 col-sm-6 py-3">
         <div class="anime-looping">
           <div
-            @click="openShowAnime(item.anime.slug)"
+            @click="openShowAnime(item.slug)"
             class="capa-looping" 
             :style="{ background: `url('${item.anime.thumb}') center / cover no-repeat`}"  
           >
@@ -66,7 +66,7 @@ export default {
       })
     },
     openShowAnime(slug){
-      this.$router.push({name: 'showanime', params: {slug: slug}})
+      this.$router.push({name: 'player', params: {slug: slug}})
     },
     compare(a,b) {
       return a.data < b.data;

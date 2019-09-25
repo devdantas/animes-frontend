@@ -68,9 +68,6 @@
         </div>
       </div>
     </div>
-    <footer>
-      <layout-footer/>
-    </footer>
   </div>
 </template>
 
@@ -153,6 +150,25 @@ export default {
   overflow-y: auto;
   overflow-x: hidden;
   height: 390px;
+  /* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
 }
 
 ul {

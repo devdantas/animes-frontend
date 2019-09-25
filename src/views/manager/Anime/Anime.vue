@@ -41,12 +41,6 @@
         </div>
       </div>
     </div>
-    <footer v-if="filtrarAnimes.length > 0">      
-      <layout-footer/>
-    </footer>
-    <footer v-else>
-      <layout-footer class="footer1" />
-    </footer>
   </div>
   
 </template>
@@ -105,11 +99,10 @@ export default {
 
 <style lang="scss" scoped>
 .footer1 {
-  position:fixed;
+  position:relative;
   bottom: 0;
   right: 0;
   left: 0;
-  clear: both;
 }
 .page-link {
   &:hover {
