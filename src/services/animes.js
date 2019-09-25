@@ -18,5 +18,8 @@ export default {
   },
   createNewAnime: (anime) => {
     return http.post('/anime/register/', anime)
+  },
+  specificEpisodio: (slug) => {
+    return http.get(`/anime/online/${slug}`)
   }
 }

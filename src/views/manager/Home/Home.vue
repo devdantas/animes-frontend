@@ -11,7 +11,7 @@
         </div>
         <div class="row mt-3 mb-5">
           <div class="col-lg-9 col-sm-12">
-            <div class="card border border-primary pt-2 pb-2 pl-2 pr-2">
+            <div class="card pt-2 pb-2 pl-2 pr-2">
               <h3 class="text-center">Últimos lançamentos</h3>
               <div class="container">
                 <last-episodeos/>               
@@ -19,7 +19,7 @@
             </div>
           </div>
           <div class="col-lg-3 col-sm-12">
-            <div class="card border-primary pt-2 pb-2 pl-2 pr-2">
+            <div class="card pt-2 pb-2 pl-2 pr-2">
               <iframe 
                 src="https://discordapp.com/widget?id=553382137391480843&theme=dark" 
                 width="100%" 

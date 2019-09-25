@@ -92,7 +92,8 @@
             <div class="row">
               <div
                 :key="index"
-                class="col-lg-4 mt-1 col-sm-2"
+                class="col-lg-4 mt-1 col-sm-2 col-md-6"
+                align="center"
                 v-for="(item, index) in this.specific.episodeos"
               >
                 <div class="episodeos">
@@ -109,12 +110,11 @@
                       />
                     </div>
                     <div class="user-view" v-else>
-                      <layout-player
-                        v-bind:titleA="item.title"
-                        v-bind:link480p="itemL.link480p"
-                        v-bind:link720p="itemL.link720p"
-                        v-bind:link1080p="itemL.link1080p"
-                      />
+                      <router-link 
+                          :to="{ name: 'player', 
+                          params: { slug: item.slug}}"
+                      >Assistir online
+                      </router-link>
                     </div>
                   </div>
                 </div>
@@ -237,14 +237,14 @@
 <script>
 import Animes from "../../../services/animes"
 import LayoutModal from "../../../components/layout/LayoutModalPutEp"
-import LayoutPlayer from "../../../components/layout/LayoutPlayerVideo"
+// import LayoutPlayer from "../../../components/layout/LayoutPlayerVideo"
 import LayoutFooter from '../../../components/layout/LayoutFooter'
 
 export default {
   name: 'showanime',
   components: {
     LayoutModal,
-    LayoutPlayer,
+    // LayoutPlayer,
     LayoutFooter
   },
   data() {
@@ -279,7 +279,7 @@ export default {
     async show() {
       await Animes.show(this.slug).then(res => {
         this.specific = res.data.anime[0] 
-        document.title = res.data.anime[0].name
+        document.title= res.data.anime[0].name
       }).catch(err => {
         if(err.response.data.error === "Anime not register"){
           this.$router.push({name: 'erro'})
@@ -340,7 +340,7 @@ export default {
 .description {
   background-color: var(--featured-second-dark);
   border-radius: 10px;
-  border: solid 0.5px var(--featured);
+  // border: solid 0.5px var(--featured);
   padding: 12px;
   color: var(--light);
   i {
@@ -352,7 +352,7 @@ export default {
 .episodeos {
   display: table;
   background-color: #f6f7f9;
-  border: solid 0.5px var(--featured);
+  // border: solid 0.5px var(--featured);
   width: 100%;
 
   .title {
@@ -367,6 +367,16 @@ export default {
   .link {
     padding: 5px 5px 5px 15px;
     .user-view {
+      .title-type {
+        margin: 0;
+        margin-left: 10px;
+        color: var(--featured);
+
+        &:hover {
+          cursor: pointer;
+          color: var(--featured-second);
+        }
+      }
       a {
         text-decoration: none;
         color: var(--featured);
@@ -378,14 +388,14 @@ export default {
 .sinopse {
   background-color: var(--featured-second-dark);
   border-radius: 10px;
-  border: solid 0.5px var(--featured);
+  // border: solid 0.5px var(--featured);
   padding: 12px;
 }
 
 .backlabel {
   background-color: var(--featured-second-dark);
   border-radius: 40px;
-  border: solid 0.5px var(--featured);
+  // border: solid 0.5px var(--featured);
   font-size: 15px;
   padding: 5px;
 }

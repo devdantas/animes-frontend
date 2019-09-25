@@ -11,6 +11,6 @@ export default [
         next()
       }
     },
-    component: () => import(/* webpackChunkName: "anime" */ './AnimeNew')
+    component: () => import(/* webpackChunkName: "animenew" */ './AnimeNew')
   }
 ]

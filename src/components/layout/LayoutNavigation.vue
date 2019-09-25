@@ -18,6 +18,7 @@
           v-for="(item, index) in routesM"
           class="nav-item"
           style="text-decoration: none;"
+          refresh
         >
           <a href="#" class="nav-link">
             {{ item.meta.title }}
