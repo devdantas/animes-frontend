@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <base-spinner/>
     <layout-notification/>
 
     <header>
@@ -20,7 +19,6 @@
 import LayoutNotification from './components/global/LayoutNotification'
 import LayoutNavigation from './components/layout/LayoutNavigation'
 import LayoutFooter from './components/layout/LayoutFooter'
-import { setTimeout } from 'timers';
 
 export default {
   name: 'App',

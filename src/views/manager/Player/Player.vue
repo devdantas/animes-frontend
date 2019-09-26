@@ -63,7 +63,7 @@
       <div class="row mt-5">
         <div class="col-sm-12 col-lg-12 col-md-12">
           <div class="comments p-2">
-            <vue-disqus shortname="animesfree-1" :title="this.list.name + ' - ' + this.list.title" :identifier="this.episodios[0].slug" v-bind:url="'https://animesonline-4e7d1.firebaseapp.com/online/'+this.episodios[0].slug"></vue-disqus>
+            <vue-disqus shortname="animesfree" v-bind:title="this.list.name + ' - ' + this.list.title" :identifier="this.$attrs.slug" v-bind:url="'https://animesonline-4e7d1.firebaseapp.com/online/'+this.$attrs.slug"></vue-disqus>
           </div>
         </div>
       </div>
@@ -105,6 +105,9 @@ export default {
   }, 
   beforeMount(){
     this.setLinks(this.$attrs.slug)
+  },
+  mounted(){
+    console.log()
   },
   methods: {
     async setLinks(slug) {
