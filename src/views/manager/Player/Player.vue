@@ -122,10 +122,7 @@ export default {
           document.title = res.data.episodeo.anime.name + ' - ' + res.data.episodeo.title
         })
         .catch(err => {
-          this.$root.$emit("Notification::show", {
-            type: "danger",
-            message: "Ocorreu algum erro, tente mais tarde!"
-          });
+          this.$router.push({name: 'erro'})
         });
     },
     async getEpisodios(slug){
