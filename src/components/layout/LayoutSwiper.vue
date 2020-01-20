@@ -2,7 +2,7 @@
   <div id="swiper">
     <div class="swiper-container s1">
       <div class="swiper-wrapper">
-        <div 
+        <div
           :key="index"
           v-for="(item, index) in swiper"
           class="swiper-slide">
@@ -64,27 +64,28 @@
 </template>
 
 <script>
-import Swiper from "swiper/dist/js/swiper.esm.bundle"
-import states from "../../services/swiper-contents.json"
+import Swiper from 'swiper/dist/js/swiper.esm.bundle'
+import states from '../../services/swiper-contents.json'
 export default {
-  name: "swiper-show",
+  name: 'swiper-show',
   computed: {
-    swiper() {
+    swiper () {
       return states.contents.map(item => {
         return item
       })
     }
   },
-  mounted() {
-    var swiper = new Swiper(".s1", {
+  mounted () {
+    // eslint-disable-next-line no-unused-vars
+    var swiper = new Swiper('.s1', {
       speed: 600,
       autoplay: {
         delay: 5000
       },
       parallax: true
-    });
+    })
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -97,15 +98,15 @@ body {
 }
 
 .swiper-container {
-  width: 100%;  
+  width: 100%;
   height: 80vh;
   @media (min-width: 992px) {
     height: 80vh;
   }
-  @media (min-width: 1200px) { 
+  @media (min-width: 1200px) {
     height: 80vh;
   }
-  @media (min-width: 1920px) { 
+  @media (min-width: 1920px) {
     height: 52vh;
   }
 }
@@ -148,10 +149,10 @@ body {
   max-width: 420px;
   height: auto;
 
-  @media (max-width: 576px) { 
+  @media (max-width: 576px) {
     display: none;
   }
-  @media (max-width: 768px) { 
+  @media (max-width: 768px) {
     display: none;
   }
 }

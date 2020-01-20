@@ -110,8 +110,8 @@
                       />
                     </div>
                     <div class="user-view" v-else>
-                      <router-link 
-                          :to="{ name: 'player', 
+                      <router-link
+                          :to="{ name: 'player',
                           params: { slug: item.slug}}"
                       >Assistir online
                       </router-link>
@@ -195,9 +195,9 @@
                 </div>
                 <div class="form-group col-sm-12">
                   <div class="custom-control custom-checkbox">
-                    <input 
-                      type="checkbox" 
-                      class="custom-control-input" 
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
                       id="customCheck1"
                       value="true"
                       v-model="form.episodeos[0].pageHome"
@@ -232,19 +232,15 @@
 </template>
 
 <script>
-import Animes from "../../../services/animes"
-import LayoutModal from "../../../components/layout/LayoutModalPutEp"
-// import LayoutPlayer from "../../../components/layout/LayoutPlayerVideo"
-import LayoutFooter from '../../../components/layout/LayoutFooter'
+import Animes from '../../../services/animes'
+import LayoutModal from '../../../components/layout/LayoutModalPutEp'
 
 export default {
   name: 'showanime',
   components: {
-    LayoutModal,
-    // LayoutPlayer,
-    LayoutFooter
+    LayoutModal
   },
-  data() {
+  data () {
     return {
       loading: false,
       showModal: false,
@@ -266,30 +262,30 @@ export default {
       }
     }
   },
-  created() {
+  created () {
     this.show()
   },
   methods: {
-    closeModal() {
+    closeModal () {
       this.showModal = false
     },
-    async show() {
+    async show () {
       await Animes.show(this.slug).then(res => {
-        this.specific = res.data.anime[0] 
-        document.title= res.data.anime[0].name
+        this.specific = res.data.anime[0]
+        document.title = res.data.anime[0].name
       }).catch(err => {
-        if(err.response.data.error === "Anime not register"){
-          this.$router.push({name: 'erro'})
+        if (err.response.data.error === 'Anime not register') {
+          this.$router.push({ name: 'erro' })
         }
       })
     },
     clearInputs () {
-      this.form.episodeos[0].title = "Episódio "
-      this.form.episodeos[0].links.link480p = ""
-      this.form.episodeos[0].links.link720p = ""
-      this.form.episodeos[0].links.link1080p = ""
+      this.form.episodeos[0].title = 'Episódio'
+      this.form.episodeos[0].links.link480p = ''
+      this.form.episodeos[0].links.link720p = ''
+      this.form.episodeos[0].links.link1080p = ''
     },
-    adicionar() {
+    adicionar () {
       this.loading = true
       Animes.add(this.form, this.specific._id).then(res => {
         this.showModal = false
@@ -297,18 +293,18 @@ export default {
         this.show()
         this.loading = false
       }).catch(err => {
-        this.$root.$emit('Notification::show', {
-          type: 'danger',
-          message: 'Ocorreu algum erro, tente mais tarde!'
-        })
+        if (err) {
+          this.$root.$emit('Notification::show', {
+            type: 'danger',
+            message: 'Ocorreu algum erro, tente mais tarde!'
+          })
+        }
         this.loading = false
       })
     }
   }
 }
 </script>
-
-
 <style lang="scss" scoped>
 .border-primary {
   border: solid 0.5px var(--light) !important;

@@ -18,20 +18,19 @@
 <script>
 import LayoutNotification from './components/global/LayoutNotification'
 import LayoutNavigation from './components/layout/LayoutNavigation'
-import LayoutFooter from './components/layout/LayoutFooter'
-
 export default {
   name: 'App',
   components: {
     LayoutNotification,
-    LayoutNavigation,
-    LayoutFooter
+    LayoutNavigation
   },
   computed: {
-    showNavBar(){
-      if(this.$route.name !== 'login' && this.$route.name !== 'erro') {
-        return this.$route.name
+    showNavBar () {
+      let res = null
+      if (this.$route.name !== 'login' && this.$route.name !== 'erro') {
+        res = this.$route.name
       }
+      return res
     }
   }
 }

@@ -18,7 +18,7 @@
             <div class="card pt-2 pb-2 pl-2 pr-2">
               <h3 class="text-center">Últimos lançamentos</h3>
               <div class="container">
-                <last-episodeos/>               
+                <last-episodeos/>
               </div>
             </div>
           </div>
@@ -33,19 +33,19 @@
             <div class="row">
               <div class="col-sm-12 col-lg-12 col-md-12">
                 <div class="card pt-2 pb-2 pl-2 pr-2">
-                  <iframe 
-                    src="https://discordapp.com/widget?id=553382137391480843&theme=dark" 
-                    width="100%" 
-                    height="300" 
-                    allowtransparency="true" 
+                  <iframe
+                    src="https://discordapp.com/widget?id=553382137391480843&theme=dark"
+                    width="100%"
+                    height="300"
+                    allowtransparency="true"
                     frameborder="0">
-                  </iframe>           
+                  </iframe>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>      
+      </div>
   </div>
 </template>
 
@@ -54,28 +54,24 @@ import BaseSpinner from '../../../components/global/BaseSpinner'
 import SwiperPrime from '../../../components/layout/LayoutSwiper'
 import SwiperRecent from '../../../components/layout/LayoutSwiperR'
 import LastEpisodeos from '../../../components/layout/LayoutLastEpisodeos'
-import LayoutFooter from '../../../components/layout/LayoutFooter'
 export default {
-  name: "home",
+  name: 'home',
   components: {
     BaseSpinner,
     SwiperPrime,
     SwiperRecent,
-    LastEpisodeos,
-    LayoutFooter
+    LastEpisodeos
   },
-  created() {
-    document.title = "Animes Free"
+  created () {
+    document.title = 'Animes Free'
   },
-  mounted() {
-    setTimeout(() =>{
+  mounted () {
+    setTimeout(() => {
       this.$root.$emit('Spinner::hide')
-    },1500);
+    }, 1500)
   }
 }
 </script>
-
-
 <style lang="scss" scoped>
 .border-primary {
   border: solid 0.5px var(--featured) !important;

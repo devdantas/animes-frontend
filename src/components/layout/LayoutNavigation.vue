@@ -14,7 +14,7 @@
           :key="index"
           tag="li"
           exact-active-class="active"
-          :to="{ name: item.name }"      
+          :to="{ name: item.name }"
           v-for="(item, index) in routesM"
           class="nav-item"
           style="text-decoration: none;"
@@ -39,26 +39,26 @@ export default {
     }
   },
   computed: {
-    routesM() {
-      return this.$router.options.routes.filter(route => route.meta);
+    routesM () {
+      return this.$router.options.routes.filter(route => route.meta)
     }
   },
   methods: {
     logout () {
       sessionStorage.removeItem('userToken')
-      this.$router.push({ name: 'login'})
+      this.$router.push({ name: 'login' })
     },
     showMenu () {
       let divDisplay = document.getElementById('navbarTogglerDemo01')
-      
-      if(divDisplay.style.display == ''){
+
+      if (divDisplay.style.display === '') {
         divDisplay.style.display = 'block'
-      }else{
+      } else {
         divDisplay.style.display = ''
       }
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

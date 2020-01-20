@@ -6,16 +6,16 @@
 
 <script>
 export default {
-  data (){
+  data () {
     return {
       visible: true
     }
   },
-  created (){
-    this.$root.$on('Spinner::show', () => { this.visible = true})
-    this.$root.$on('Spinner::hide', () => { this.visible = false})
+  created () {
+    this.$root.$on('Spinner::show', () => { this.visible = true })
+    this.$root.$on('Spinner::hide', () => { this.visible = false })
   },
-  methods:{
+  methods: {
     alternarSpinner () {
       this.visible = !this.visible
     }

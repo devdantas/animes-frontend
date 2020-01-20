@@ -10,18 +10,18 @@
           <div class="row">
             <div class="col-lg-12">
               <label class="col-form-label">Nome:</label>
-              <input 
+              <input
                 v-model="form.name"
-                type="text" 
-                class="form-control" 
+                type="text"
+                class="form-control"
                 required />
             </div>
             <div class="col-lg-12">
               <label class="col-form-label">Nome Alternativo:</label>
-              <input 
+              <input
                 v-model="form.nameAlternative"
-                type="text" 
-                class="form-control" 
+                type="text"
+                class="form-control"
                 required />
             </div>
           </div>
@@ -29,17 +29,17 @@
             <div class="col-lg-6">
               <label class="col-form-label">Ano de Lançamento:</label>
               <input
-                v-model="form.year" 
-                type="number" 
-                class="form-control" 
+                v-model="form.year"
+                type="number"
+                class="form-control"
                 required />
             </div>
             <div class="col-lg-6">
               <label class="col-form-label">Quantidade de Episódios:</label>
-              <input 
+              <input
                 v-model="form.numberEpisodes"
-                type="number" 
-                class="form-control" 
+                type="number"
+                class="form-control"
                 required />
             </div>
           </div>
@@ -47,9 +47,9 @@
             <div class="col-lg-12">
               <label class="col-form-label">Sinopse:</label>
               <textarea
-                v-model="form.sinopse" 
-                class="form-control" 
-                style="resize: none;" 
+                v-model="form.sinopse"
+                class="form-control"
+                style="resize: none;"
                 rows="5" />
             </div>
           </div>
@@ -57,9 +57,9 @@
             <div class="col-lg-12">
               <label class="col-form-label">Thumbnail link:</label>
               <input
-                v-model="form.thumb" 
-                type="url" 
-                class="form-control" 
+                v-model="form.thumb"
+                type="url"
+                class="form-control"
                 required />
             </div>
           </div>
@@ -120,8 +120,8 @@
                   :key="index"
                   v-for="(itemG, index) in genders"
                 >
-                  <input 
-                    :id="'checkbox'+index" 
+                  <input
+                    :id="'checkbox'+index"
                     :value="itemG._id"
                     v-model="form.genders"
                     type="checkbox"
@@ -147,41 +147,41 @@
               <div class="col-lg-12">
                 <label class="col-form-label">Titulo do Episódio:</label>
                 <input
-                  v-model="form.episodeos[index].title" 
-                  type="text" 
-                  class="form-control" 
+                  v-model="form.episodeos[index].title"
+                  type="text"
+                  class="form-control"
                   required />
               </div>
               <div class="col-lg-12">
                 <label class="col-form-label">Link 480p:</label>
                 <input
-                  v-model="form.episodeos[index].links.link480p" 
-                  type="url" 
-                  class="form-control" 
+                  v-model="form.episodeos[index].links.link480p"
+                  type="url"
+                  class="form-control"
                   required />
               </div>
               <div class="col-lg-12">
                 <label class="col-form-label">Link 720p:</label>
                 <input
-                  v-model="form.episodeos[index].links.link720p" 
-                  type="url" 
-                  class="form-control" 
+                  v-model="form.episodeos[index].links.link720p"
+                  type="url"
+                  class="form-control"
                   required />
               </div>
               <div class="col-lg-12">
                 <label class="col-form-label">Link 1080p:</label>
                 <input
-                  v-model="form.episodeos[index].links.link1080p" 
-                  type="url" 
-                  class="form-control" 
+                  v-model="form.episodeos[index].links.link1080p"
+                  type="url"
+                  class="form-control"
                   required />
               </div>
 
               <div class="form-group col-lg-12">
                 <div class="custom-control custom-checkbox">
-                  <input 
-                    type="checkbox" 
-                    class="custom-control-input" 
+                  <input
+                    type="checkbox"
+                    class="custom-control-input"
                     id="customCheck1"
                     value="true"
                     v-model="form.episodeos[0].pageHome"
@@ -217,11 +217,11 @@
 </template>
 
 <script>
-import Aux from "../../../services/auxTTG";
-import Anime from "../../../services/animes"
+import Aux from '../../../services/auxTTG'
+import Anime from '../../../services/animes'
 export default {
-  name: "new-anime",
-  data() {
+  name: 'new-anime',
+  data () {
     return {
       loading: false,
       type: [],
@@ -239,15 +239,15 @@ export default {
         genders: [],
         episodeos: []
       }
-    };
+    }
   },
-  created() {
+  created () {
     this.getType()
     this.getTypeRaw()
     this.getGenders()
   },
   methods: {
-    clearInputs(){
+    clearInputs () {
       this.form.thumb = ''
       this.form.name = ''
       this.form.nameAlternative = ''
@@ -259,8 +259,8 @@ export default {
       this.form.genders = []
       this.form.episodeos = []
     },
-    submit() {
-      this.loading = true;
+    submit () {
+      this.loading = true
       Anime.createNewAnime(this.form).then(res => {
         this.clearInputs()
         this.loading = false
@@ -270,40 +270,42 @@ export default {
         })
       }).catch(err => {
         this.loading = false
-        this.$root.$emit('Notification::show', {
-          type: 'danger',
-          message: 'Erro ao cadastrar, tente novamente!'
-        })
+        if (err) {
+          this.$root.$emit('Notification::show', {
+            type: 'danger',
+            message: 'Erro ao cadastrar, tente novamente!'
+          })
+        }
       })
     },
-    getType() {
+    getType () {
       Aux.indexType()
         .then(res => {
-          this.type = res.data.type;
+          this.type = res.data.type
         })
         .catch(err => {
-          console.log("Type erro", err);
-        });
+          console.log('Type erro', err)
+        })
     },
-    getTypeRaw() {
+    getTypeRaw () {
       Aux.indexTypeRaw()
         .then(res => {
           this.typeRaw = res.data.typeRaw
         })
         .catch(err => {
-          console.log("TypeRaw err", err);
-        });
+          console.log('TypeRaw err', err)
+        })
     },
-    getGenders() {
+    getGenders () {
       Aux.indexGender()
         .then(res => {
-          this.genders = res.data.gender;
+          this.genders = res.data.gender
         })
         .catch(err => {
-          console.log("Gender erro", err);
-        });
+          console.log('Gender erro', err)
+        })
     },
-    addEpisodeo() {
+    addEpisodeo () {
       this.form.episodeos.push({
         title: '',
         pageHome: false,
@@ -312,15 +314,16 @@ export default {
           link720p: '',
           link1080p: ''
         }
-      });
+      })
     },
-    deleteEpisodeo(index) {
-      this.form.episodeos.splice(index, 1);
-      if (index === 0)
+    deleteEpisodeo (index) {
+      this.form.episodeos.splice(index, 1)
+      if (index === 0) {
         this.addEpisodeo()
+      }
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -375,7 +378,6 @@ export default {
     margin: 0px 0px 0px 3px;
     padding: 0;
     list-style: none;
-    
     li {
       display: inline;
 

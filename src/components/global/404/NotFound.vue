@@ -10,9 +10,9 @@
       </div>
       <div class="row justify-content-center">
         <router-link to="/">Voltar</router-link>
-      </div>      
+      </div>
     </div>
-  </div>  
+  </div>
 </template>
 
 <script>

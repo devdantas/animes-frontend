@@ -1,6 +1,6 @@
 <template>
   <div class="player">
-    <div class="container-fluid">      
+    <div class="container-fluid">
       <div class="row pt-2 pb-3">
         <div class="col-lg-8 col-sm-12 col-md-12">
           <div v-if="show" class="alert alert-info alert-dismissible fade show">
@@ -72,45 +72,38 @@
 </template>
 
 <script>
-import Episodio from "../../../services/animes"
-import LayoutFooter from '../../../components/layout/LayoutFooter'
+import Episodio from '../../../services/animes'
 export default {
-  name: "player",
-  components: {
-    LayoutFooter
-  },
+  name: 'player',
   computed: {
-    player() {
-      return this.$refs.plyr.player;
+    player () {
+      return this.$refs.plyr.player
     }
   },
-  data() {
+  data () {
     return {
       list: {
-        name: "",
-        title: "",
-        link480p: "",
-        link720p: "",
-        link1080p: ""
+        name: '',
+        title: '',
+        link480p: '',
+        link720p: '',
+        link1080p: ''
       },
-      episodios: [],  
-      slugAnime: "",
+      episodios: [],
+      slugAnime: '',
       show: true
-    };
+    }
   },
   watch: {
-    $route(to, from) {
-      window.location.href = '/online/'+to.params.slug
+    $route (to, from) {
+      window.location.href = '/online/' + to.params.slug
     }
-  }, 
-  beforeMount(){
+  },
+  beforeMount () {
     this.setLinks(this.$attrs.slug)
   },
-  mounted(){
-    console.log()
-  },
   methods: {
-    async setLinks(slug) {
+    async setLinks (slug) {
       await Episodio.specificEpisodio(slug)
         .then(res => {
           this.list.name = res.data.episodeo.anime.name
@@ -122,15 +115,17 @@ export default {
           document.title = res.data.episodeo.anime.name + ' - ' + res.data.episodeo.title
         })
         .catch(err => {
-          this.$router.push({name: 'erro'})
-        });
+          if (err) {
+            this.$router.push({ name: 'erro' })
+          }
+        })
     },
-    async getEpisodios(slug){
+    async getEpisodios (slug) {
       await Episodio.show(slug).then(res => {
         this.episodios = res.data.anime[0].episodeos
       }).catch(err => {
-        if(err.response.data.error === "Anime not register"){
-          this.$router.push({name: 'erro'})
+        if (err.response.data.error === 'Anime not register') {
+          this.$router.push({ name: 'erro' })
         }
       })
     },
@@ -138,9 +133,8 @@ export default {
       this.show = false
     }
   }
-};
+}
 </script>
-
 <style lang="scss" scoped>
 .title-list {
   text-align: center;

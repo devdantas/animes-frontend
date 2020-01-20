@@ -11,7 +11,7 @@
                   src="https://image.flaticon.com/icons/png/128/753/753352.png"
                   width="72"
                   height="72"
-                />                
+                />
               </center>
               <h1 class="h3 mb-3 font-weight-normal" align="center">Animes Free</h1>
               <div class="form-group">
@@ -46,7 +46,7 @@
                   <i class="fa fa-sign-in-alt"></i>
                 </template>
               </button>
-              </div>              
+              </div>
             </form>
           </div>
         </div>
@@ -56,36 +56,36 @@
 </template>
 
 <script>
-import Auth from "../../../services/auth"
+import Auth from '../../../services/auth'
 export default {
-  name: "login",
+  name: 'login',
   data () {
     return {
       loading: false,
       user: {
-        email: "",
-        password: ""
+        email: '',
+        password: ''
       }
-    };
+    }
   },
   methods: {
-    doLogin() {
+    doLogin () {
       this.loading = true
 
       Auth.login(this.user).then(res => {
         let token = res.data.token
-        sessionStorage.setItem("userToken", token)
-        this.$router.push({ name: 'home'})
+        sessionStorage.setItem('userToken', token)
+        this.$router.push({ name: 'home' })
       }).catch(err => {
-        alert("Usuário ou senha inválidos")
+        if (err) {
+          alert('Usuário ou senha inválidos')
+        }
         this.loading = false
       })
     }
   }
-};
+}
 </script>
-
-
 <style lang="scss" scoped>
 .login {
   width: 100%;
@@ -105,7 +105,7 @@ export default {
   padding: 15px;
   background-color: #fff;
   border-radius: 5px;
-  
+
   h1 {
     color: #000;
   }

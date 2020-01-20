@@ -1,15 +1,15 @@
 <template>
   <div id="last-episodeos">
     <div class="row">
-      <div 
+      <div
         :key="index"
         v-for="(item, index) in filterAnime"
         class="col-lg-3 col-md-4 col-sm-6 py-3">
         <div class="anime-looping">
           <div
             @click="openShowAnime(item.slug)"
-            class="capa-looping" 
-            :style="{ background: `url('${item.anime.thumb}') center / cover no-repeat`}"  
+            class="capa-looping"
+            :style="{ background: `url('${item.anime.thumb}') center / cover no-repeat`}"
           >
           </div>
             <div class="nome-looping">{{item.anime.name}}</div>
@@ -17,7 +17,6 @@
         </div>
       </div>
     </div>
-    
     <nav aria-label="Page navigation example">
       <ul class="pagination justify-content-end">
         <li class="page-item disabled">
@@ -36,7 +35,7 @@
 
 <script>
 import Episodeos from '../../services/animes'
-import orderBy from 'lodash.orderby'
+
 export default {
   name: 'last-episodeos',
   data () {
@@ -46,30 +45,32 @@ export default {
     }
   },
   computed: {
-    filterAnime() {
-      return this.list    
+    filterAnime () {
+      return this.list
     }
   },
   created () {
     this.listar(1)
   },
   methods: {
-    async listar(page) {
+    async listar (page) {
       await Episodeos.indexEp(page).then(res => {
         this.list = res.data.episodeo.docs
         this.totalpages = res.data.episodeo.pages
       }).catch(err => {
-        this.$root.$emit('Notification::show', {
-          type: 'danger',
-          message: 'Ocorreu algum erro, tente mais tarde!'
-        })
+        if (err) {
+          this.$root.$emit('Notification::show', {
+            type: 'danger',
+            message: 'Ocorreu algum erro, tente mais tarde!'
+          })
+        }
       })
     },
-    openShowAnime(slug){
-      this.$router.push({name: 'player', params: {slug: slug}})
+    openShowAnime (slug) {
+      this.$router.push({ name: 'player', params: { slug: slug } })
     },
-    compare(a,b) {
-      return a.data < b.data;
+    compare (a, b) {
+      return a.data < b.data
     }
   }
 }

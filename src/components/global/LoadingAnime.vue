@@ -1,5 +1,5 @@
 <template>
-  <div class="spinner"> 
+  <div class="spinner">
     <img src="https://media1.tenor.com/images/409076a50c22dd523f679737366d3f16/tenor.gif?itemid=14256161" width="250" height="250">
   </div>
 </template>

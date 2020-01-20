@@ -14,7 +14,7 @@
             <div class="modal-header">
               <h5 slot="title" class="modal-title" id="exampleModalLiveLabel">
                 Atualizar links do {{this.titleA}}
-              </h5> 
+              </h5>
               <button type="button" @click="closeModal()" class="close">
                 <span aria-hidden="true">×</span>
               </button>
@@ -24,9 +24,9 @@
               <div class="row">
                 <div class="form-group col-sm-12">
                   <label class="col-form-label">Link 480p:</label>
-                  <input 
-                    type="url" 
-                    class="form-control" 
+                  <input
+                    type="url"
+                    class="form-control"
                     v-model="form.episodeos[0].links.link480p"
                     required />
                 </div>
@@ -34,9 +34,9 @@
               <div class="row">
                 <div class="form-group col-sm-12">
                   <label class="col-form-label">Link 720p:</label>
-                  <input 
-                    type="url" 
-                    class="form-control" 
+                  <input
+                    type="url"
+                    class="form-control"
                     v-model="form.episodeos[0].links.link720p"
                     required />
                 </div>
@@ -44,9 +44,9 @@
               <div class="row">
                 <div class="form-group col-sm-12">
                   <label class="col-form-label">Link 1080p:</label>
-                  <input 
-                    type="url" 
-                    class="form-control" 
+                  <input
+                    type="url"
+                    class="form-control"
                     v-model="form.episodeos[0].links.link1080p"
                     required />
                 </div>
@@ -77,7 +77,7 @@
 <script>
 import Animes from '../../services/animes'
 export default {
-  name: "layoutmodal",
+  name: 'layoutmodal',
   props: {
     episodeoId: {
       type: String,
@@ -100,7 +100,7 @@ export default {
       required: true
     }
   },
-  data() {
+  data () {
     return {
       loading: false,
       showModal: false,
@@ -114,15 +114,15 @@ export default {
               link1080p: this.link1080p
             }
           }
-        ]        
+        ]
       }
-    };
+    }
   },
   methods: {
-    closeModal() {
-      this.showModal = false;
+    closeModal () {
+      this.showModal = false
     },
-    atualizar() {
+    atualizar () {
       this.loading = true
       Animes.put(this.form, this.episodeoId).then(res => {
         this.showModal = false
@@ -136,7 +136,7 @@ export default {
       })
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

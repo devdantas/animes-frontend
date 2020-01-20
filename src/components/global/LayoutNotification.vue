@@ -21,15 +21,15 @@ export default {
     message: ''
   }),
   created () {
-    this.$root.$on('Notification::show', payload =>{
+    this.$root.$on('Notification::show', payload => {
       this.show = true
       this.type = payload.type
       this.message = payload.message
 
       setTimeout(() => { this.close() }, payload.timeout || 10000)
-    });
+    })
   },
-  methods:  {
+  methods: {
     close () {
       this.message = ''
       this.type = 'danger'

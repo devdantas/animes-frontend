@@ -4,21 +4,21 @@
       <h2 class="pt-3">Animes</h2>
         <template v-if="token">
           <button
-            @click="openPageAddAnime" 
+            @click="openPageAddAnime"
             type="button"
             class="btn btn-sm btn-outline-primary"
           >
             Adicionar anime
           </button>
-        </template>   
+        </template>
         <hr>
         <div class="row justify-content-end">
           <div class="col-sm-4 col-lg-4 col-md-4">
             <input class="form-control form-control-sm" type="text" v-model="search" placeholder="Buscar anime">
           </div>
-        </div>    
+        </div>
       <div class="row" v-if="filtrarAnimes.length > 0">
-        <div 
+        <div
           :key="index"
           class="col-lg-2 col-md-4 py-3"
           v-for="(item, index) in filtrarAnimes"
@@ -26,8 +26,8 @@
           <div class="anime-looping">
             <div
               @click="openShowAnime(item.slug)"
-              class="capa-looping" 
-              :style="{ background: `url('${item.thumb}') center / cover no-repeat`}" 
+              class="capa-looping"
+              :style="{ background: `url('${item.thumb}') center / cover no-repeat`}"
             >
             </div>
             <div v-if="item.episodeos.length > 0" class="nome-looping">{{item.name}}</div>
@@ -42,14 +42,11 @@
       </div>
     </div>
   </div>
-  
 </template>
 
 <script>
 import Animes from '../../../services/animes'
 import LoadingAnime from '../../../components/global/LoadingAnime'
-import LayoutFooter from '../../../components/layout/LayoutFooter'
-import { setTimeout } from 'timers';
 export default {
   name: 'animes',
   data () {
@@ -60,43 +57,41 @@ export default {
     }
   },
   components: {
-    LoadingAnime,
-    LayoutFooter
+    LoadingAnime
   },
   computed: {
-    filtrarAnimes() {
-       return this.catalago.filter(c => {
+    filtrarAnimes () {
+      return this.catalago.filter(c => {
         return c.name.toLowerCase().includes(this.search.toLowerCase())
       })
     }
   },
   created () {
     this.listar()
-    document.title = "Animes"
+    document.title = 'Animes'
   },
-  methods: {    
-    async listar() {      
+  methods: {
+    async listar () {
       await Animes.index().then(res => {
         this.catalago = res.data.anime
       }).catch(err => {
-        this.$root.$emit('Notification::show', {
-          type: 'danger',
-          message: 'Ocorreu algum erro, tente mais tarde!'
-        })
+        if (err) {
+          this.$root.$emit('Notification::show', {
+            type: 'danger',
+            message: 'Ocorreu algum erro, tente mais tarde!'
+          })
+        }
       })
     },
-    
-    openShowAnime(slug){
-      this.$router.push({name: 'showanime', params: {slug: slug}})
+    openShowAnime (slug) {
+      this.$router.push({ name: 'showanime', params: { slug: slug } })
     },
-    openPageAddAnime() {
-      this.$router.push({name: 'add-anime'})
+    openPageAddAnime () {
+      this.$router.push({ name: 'add-anime' })
     }
   }
-};
+}
 </script>
-
-
 <style lang="scss" scoped>
 .footer1 {
   position:relative;
